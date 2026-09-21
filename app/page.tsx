@@ -1,192 +1,43 @@
 import Link from "next/link";
 
-const skills = [
-  {
-    number: "01",
-    title: "Graphic Design",
-    description:
-      "Branding, logos, posters, flyers, social media graphics and marketing materials.",
-  },
-  {
-    number: "02",
-    title: "Web Development",
-    description:
-      "Modern responsive websites and web applications using React, Next.js, TypeScript and modern web technologies.",
-  },
-  {
-    number: "03",
-    title: "Digital Marketing",
-    description:
-      "SEO, Google Business, social media and digital strategies designed to help businesses grow online.",
-  },
-  {
-    number: "04",
-    title: "Print & Production",
-    description:
-      "DTF, sublimation, apparel design, print-ready artwork and production workflows.",
-  },
-  {
-    number: "05",
-    title: "Live Production",
-    description:
-      "Live streaming, switching, broadcast graphics, cameras, audio/video workflows and production.",
-  },
-  {
-    number: "06",
-    title: "AI & Technology",
-    description:
-      "Using AI and modern digital tools to solve problems, improve workflows and build better digital experiences.",
-  },
-];
-
-const services = [
-  "Brand Identity",
-  "Graphic Design",
-  "Website Development",
-  "Landing Pages",
-  "SEO",
-  "Digital Marketing",
-  "Social Media Design",
-  "Print & Apparel",
-  "Live Streaming",
-  "Creative Direction",
-];
-
-const experiences = [
-  {
-    number: "01",
-    role: "Founder • Developer",
-    company: "HomeLinker",
-    description:
-      "Founded and developed a South African property marketplace from the ground up, working across product design, web development, SEO, marketing and digital strategy.",
-  },
-  {
-    number: "02",
-    role: "Creative • Digital",
-    company: "Freelance",
-    description:
-      "Working across graphic design, branding, websites, digital marketing, social media and creative problem solving for different projects and businesses.",
-  },
-  {
-    number: "03",
-    role: "Print • Apparel",
-    company: "Urban Ink Studios",
-    description:
-      "Worked with DTF, sublimation, apparel design, print production and preparing artwork for physical products.",
-  },
-  {
-    number: "04",
-    role: "Graphic Designer",
-    company: "SkyCity Printing",
-    description:
-      "Created graphic design and print materials while working within a production-focused printing environment.",
-  },
-  {
-    number: "05",
-    role: "Media • Production",
-    company: "Live Production",
-    description:
-      "Experience with ATEM Mini Pro, OBS Studio, Bitfocus Companion, livestreaming, camera feeds, graphics and audio/video production.",
-  },
-];
-
-function SkillCard({
-  number,
-  title,
-  description,
-}: {
-  number: string;
-  title: string;
-  description: string;
-}) {
-  return (
-    <article className="skill-card">
-      <span>{number}</span>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </article>
-  );
-}
-
-function Service({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="service-item">
-      <span>+</span>
-      <strong>{children}</strong>
-    </div>
-  );
-}
-
-function Experience({
-  number,
-  role,
-  company,
-  description,
-}: {
-  number: string;
-  role: string;
-  company: string;
-  description: string;
-}) {
-  return (
-    <article className="experience-item">
-      <span className="experience-number">{number}</span>
-
-      <div>
-        <p className="experience-role">{role}</p>
-        <h3>{company}</h3>
-        <p className="experience-description">{description}</p>
-      </div>
-    </article>
-  );
-}
-
 export default function Home() {
   return (
     <main>
-      {/* NAVBAR */}
-      <header className="navbar">
-        <Link href="/" className="nav-logo">
+      <nav className="navbar">
+        <a href="#top" className="nav-logo">
           SAMUEL<span>.</span>
-        </Link>
+        </a>
 
-        <nav className="nav-links">
-          <a href="#about">ABOUT</a>
-          <a href="#skills">SKILLS</a>
-          <a href="#work">WORK</a>
-          <a href="#experience">EXPERIENCE</a>
-          <a href="#contact">CONTACT</a>
-        </nav>
+        <div className="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-        <a
-          href="/Samuel-Ndlovu-CV.pdf"
-          download
-          className="nav-cta"
-        >
+        <a href="/Samuel-Ndlovu-CV.pdf" download className="nav-cta">
           DOWNLOAD CV
         </a>
-      </header>
+      </nav>
 
-      {/* HERO */}
-      <section className="hero">
+      <section className="hero" id="top">
         <div className="hero-content">
           <p className="eyebrow">CREATIVE • DIGITAL • TECHNICAL</p>
 
           <h1>
-            SAMUEL
-            <span>NDLOVU.</span>
+            SAMUEL<span>NDLOVU.</span>
           </h1>
 
           <h2>
             Creative Designer <span>•</span> Web Developer{" "}
-            <span>•</span> Digital Marketer <span>•</span> Media
-            Production
+            <span>•</span> Digital Marketer <span>•</span> Media Production
           </h2>
 
           <p className="hero-description">
-            I build visual identities, websites, digital experiences and
-            media systems that bring ideas to life. My work sits at the
-            intersection of creativity, technology and problem solving.
+            I build visual identities, websites, digital experiences and media
+            systems that bring ideas to life. My work sits at the intersection
+            of creativity, technology and problem solving.
           </p>
 
           <div className="hero-actions">
@@ -198,11 +49,7 @@ export default function Home() {
               CONTACT ME
             </a>
 
-            <a
-              href="/Samuel-Ndlovu-CV.pdf"
-              download
-              className="btn"
-            >
+            <a href="/Samuel-Ndlovu-CV.pdf" download className="btn">
               DOWNLOAD CV
             </a>
           </div>
@@ -210,10 +57,7 @@ export default function Home() {
 
         <div className="hero-visual">
           <div className="hero-image-wrap">
-            <img
-              src="/images/samuel-portrait.jpg"
-              alt="Samuel Ndlovu"
-            />
+            <img src="/images/samuel-portrait.jpg" alt="Samuel Ndlovu" />
 
             <div className="hero-image-label">
               <span>AVAILABLE FOR</span>
@@ -223,166 +67,172 @@ export default function Home() {
 
           <div className="hero-index">01</div>
         </div>
+
+        <div className="pirate-easter-egg" aria-hidden="true">
+          <div className="pirate-track">
+            <div className="pirate">
+              <span className="pirate-flag" />
+            </div>
+            <div className="pirate">
+              <span className="pirate-flag" />
+            </div>
+            <div className="pirate">
+              <span className="pirate-flag" />
+            </div>
+            <div className="pirate">
+              <span className="pirate-flag" />
+            </div>
+            <div className="pirate">
+              <span className="pirate-flag" />
+            </div>
+            <div className="pirate">
+              <span className="pirate-flag" />
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="section about-section">
-        <div className="section-label">
-          <span>01</span>
-          ABOUT ME
-        </div>
-
+      <section className="about" id="about">
         <div className="about-grid">
-          <div className="about-image">
-            <img
-              src="/images/samuel-about.jpg"
-              alt="Samuel Ndlovu working creatively"
-            />
+          <div>
+            <div className="about-number">01</div>
           </div>
 
-          <div className="about-content">
-            <p className="section-eyebrow">MORE THAN A DESIGNER.</p>
+          <div className="about-copy">
+            <p className="eyebrow">ABOUT ME</p>
 
             <h2>
-              I BUILD
-              <span>IDEAS.</span>
+              CREATIVE
+              <br />
+              <span>PROBLEM</span>
+              <br />
+              SOLVER.
             </h2>
 
             <p>
-              I&apos;m a multidisciplinary creative working across design,
+              I am a multidisciplinary creative working across graphic design,
               web development, digital marketing, print and live media
               production.
             </p>
 
             <p>
-              I enjoy taking an idea from a blank page and turning it into
-              something real — whether that is a brand, website, campaign,
-              product, printed piece or live digital experience.
+              I enjoy taking an idea from a rough concept and turning it into
+              something people can actually see, use and interact with.
             </p>
 
             <p>
-              My approach combines creative thinking with technology and
-              practical problem solving.
+              My approach combines design thinking, technology and practical
+              problem solving to create work that looks good and actually does
+              something.
             </p>
-
-            <div className="about-facts">
-              <div>
-                <strong>06+</strong>
-                <span>CREATIVE DISCIPLINES</span>
-              </div>
-
-              <div>
-                <strong>01</strong>
-                <span>FLAGSHIP PLATFORM</span>
-              </div>
-
-              <div>
-                <strong>SA</strong>
-                <span>SOUTH AFRICAN</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* SKILLS */}
-      <section id="skills" className="section skills-section">
-        <div className="section-label">
-          <span>02</span>
-          SKILLS
-        </div>
-
+      <section className="skills" id="skills">
         <div className="section-heading">
-          <p className="section-eyebrow">WHAT I DO</p>
+          <p className="eyebrow">WHAT I DO</p>
 
           <h2>
-            CREATIVE
-            <span>VERSATILITY.</span>
+            MULTI
+            <br />
+            DISCIPLINARY.
           </h2>
 
           <p>
-            Different disciplines. One goal — creating work that looks
-            good, works properly and solves a real problem.
+            Different tools. Different disciplines. One goal: create useful,
+            memorable digital and visual experiences.
           </p>
         </div>
 
         <div className="skills-grid">
-          {skills.map((skill) => (
-            <SkillCard key={skill.number} {...skill} />
-          ))}
+          <SkillCard
+            number="01"
+            title="Graphic Design"
+            text="Branding, logos, posters, flyers, social media graphics, marketing materials and visual identities."
+          />
+
+          <SkillCard
+            number="02"
+            title="Web Development"
+            text="Responsive websites and digital products using React, Next.js, TypeScript, Tailwind CSS, Supabase and Vercel."
+          />
+
+          <SkillCard
+            number="03"
+            title="Digital Marketing"
+            text="SEO, online presence, Google Business, social media strategy and digital growth."
+          />
+
+          <SkillCard
+            number="04"
+            title="Print & Apparel"
+            text="DTF, sublimation, apparel graphics, print-ready artwork and production-focused design."
+          />
+
+          <SkillCard
+            number="05"
+            title="Live Production"
+            text="ATEM switching, OBS, livestreaming, camera feeds, graphics, audio and video workflows."
+          />
+
+          <SkillCard
+            number="06"
+            title="AI & Digital Tools"
+            text="Using modern digital and AI tools to speed up creative work, solve problems and build better workflows."
+          />
         </div>
       </section>
 
-      {/* WORK */}
-      <section id="work" className="section work-section">
-        <div className="section-label">
-          <span>03</span>
-          SELECTED WORK
-        </div>
-
+      <section className="work" id="work">
         <div className="section-heading">
-          <p className="section-eyebrow">PROJECTS</p>
+          <p className="eyebrow">SELECTED WORK</p>
 
           <h2>
-            THINGS I&apos;VE
-            <span>BUILT.</span>
+            THINGS
+            <br />
+            I&apos;VE BUILT.
           </h2>
+
+          <p>
+            A selection of projects across web development, branding, graphic
+            design, apparel and live production.
+          </p>
         </div>
 
-        {/* HOMELINKER */}
-        <div className="work-block featured-work">
+        <div className="work-block">
           <div className="work-block-heading">
             <div>
               <p className="project-category">01 / WEB DEVELOPMENT</p>
-
               <h3>HomeLinker</h3>
             </div>
 
             <p>
-              A South African property marketplace built from the ground
-              up.
+              A South African property marketplace I designed, developed and
+              continue to build. Users can search properties, view locations
+              on maps and publish property listings.
             </p>
           </div>
 
-          <div className="featured-project">
-            <div className="featured-project-image">
-              <img
-                src="/images/homelinker.png"
-                alt="HomeLinker property marketplace"
-              />
-            </div>
-
-            <div className="featured-project-content">
-              <span>FOUNDER • DEVELOPER • DESIGNER</span>
+          <div className="project-showcase">
+            <div className="project-showcase-content">
+              <p className="eyebrow">FLAGSHIP PROJECT</p>
 
               <h3>
-                FROM
+                HOME
                 <br />
-                IDEA TO
-                <br />
-                <strong>LIVE PLATFORM.</strong>
+                LINKER<span>.</span>
               </h3>
 
               <p>
-                I designed and developed HomeLinker as a South African
-                property marketplace where people can search for homes,
-                view listings and connect with property owners and agents.
+                A property marketplace built from the ground up using modern
+                web technologies. The platform combines property listings,
+                search, maps, accounts, image uploads, SEO and a responsive
+                user experience.
               </p>
 
-              <div className="project-tech">
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>Supabase</span>
-                <span>Tailwind</span>
-                <span>Vercel</span>
-                <span>Leaflet</span>
-              </div>
-
               <div className="project-links">
-                <Link
-                  href="/work/homelinker"
-                  className="project-link"
-                >
+                <Link href="/work/homelinker" className="project-link">
                   VIEW CASE STUDY <span>↗</span>
                 </Link>
 
@@ -408,86 +258,92 @@ export default function Home() {
           </div>
         </div>
 
-        {/* DESIGN */}
         <div className="work-block">
           <div className="work-block-heading">
             <div>
               <p className="project-category">02 / GRAPHIC DESIGN</p>
 
-              <h3>Visual Design</h3>
+              <h3>
+                Visual
+                <br />
+                Design
+              </h3>
             </div>
 
             <p>
-              Branding, promotional graphics and visual communication.
+              Posters, promotional graphics, branding concepts, marketing
+              artwork and digital designs.
             </p>
           </div>
 
-          <div className="design-grid">
-            <div className="design-card">
+          <div className="design-gallery">
+            <div className="design-item">
+              <img src="/images/design-01.jpg" alt="Graphic design project" />
+            </div>
+
+            <div className="design-item">
+              <img src="/images/design-02.jpg" alt="Graphic design project" />
+            </div>
+
+            <div className="design-item">
               <img
-                src="/images/design-01.jpg"
-                alt="Graphic design project"
+                src="/images/homelinker.png"
+                alt="HomeLinker branding project"
               />
             </div>
 
-            <div className="design-card">
+            <div className="design-item">
               <img
-                src="/images/design-02.jpg"
-                alt="Graphic design project"
+                src="/images/samuel-about.jpg"
+                alt="Samuel Ndlovu creative design"
               />
             </div>
           </div>
         </div>
 
-        {/* APPAREL */}
         <div className="work-block">
           <div className="work-block-heading">
             <div>
-              <p className="project-category">03 / PRINT & APPAREL</p>
+              <p className="project-category">03 / APPAREL & PRINT</p>
 
-              <h3>Apparel Design</h3>
+              <h3>
+                Print
+                <br />
+                Ready.
+              </h3>
             </div>
 
             <p>
-              Designs created for physical products, apparel and print.
+              Design work created for clothing, merchandise and physical
+              production.
             </p>
           </div>
 
-          <div className="apparel-project">
-            <img
-              src="/images/shirt-design.jpeg"
-              alt="Apparel design project"
-            />
+          <div className="apparel-grid">
+            <div className="apparel-card">
+              <img src="/images/shirt-design.jpeg" alt="Apparel design" />
+            </div>
 
-            <div className="apparel-overlay">
-              <div>
-                <span>DTF • SUBLIMATION • PRINT</span>
-
-                <h3>APPAREL</h3>
-
-                <p>
-                  Creating artwork that works beyond the screen and can
-                  become a physical product.
-                </p>
-              </div>
-
-              <strong>03</strong>
+            <div className="apparel-card">
+              <img src="/images/design-01.jpg" alt="Print design" />
             </div>
           </div>
         </div>
 
-        {/* LIVE PRODUCTION */}
         <div className="work-block">
           <div className="work-block-heading">
             <div>
               <p className="project-category">04 / MEDIA PRODUCTION</p>
 
-              <h3>Live Production</h3>
+              <h3>
+                Live
+                <br />
+                Production
+              </h3>
             </div>
 
             <p>
-              Live streaming, switching, graphics and audio/video
-              production.
+              Live streaming, switching, graphics and audio/video production.
             </p>
           </div>
 
@@ -541,138 +397,238 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="section services-section">
-        <div className="section-label">
-          <span>04</span>
-          SERVICES
-        </div>
-
+      <section className="services" id="services">
         <div className="section-heading">
-          <p className="section-eyebrow">HOW I CAN HELP</p>
+          <p className="eyebrow">SERVICES</p>
 
           <h2>
-            CREATIVE
-            <span>EXECUTION.</span>
+            WHAT I CAN
+            <br />
+            BUILD.
           </h2>
+
+          <p>
+            Need something designed, built, marketed or produced? These are the
+            areas I can help with.
+          </p>
         </div>
 
         <div className="services-grid">
-          {services.map((service) => (
-            <Service key={service}>{service}</Service>
-          ))}
+          <Service
+            number="01"
+            title="Brand & Graphic Design"
+            text="Logos, branding, posters, flyers, social media artwork, presentations and marketing materials."
+          />
+
+          <Service
+            number="02"
+            title="Website Development"
+            text="Modern responsive websites, landing pages and digital platforms built around real business needs."
+          />
+
+          <Service
+            number="03"
+            title="Digital Marketing"
+            text="SEO, Google Business setup, social media content and online presence optimisation."
+          />
+
+          <Service
+            number="04"
+            title="Print & Apparel"
+            text="Artwork prepared for DTF, sublimation, clothing, merchandise and other physical production."
+          />
+
+          <Service
+            number="05"
+            title="Livestream Production"
+            text="ATEM switching, OBS, camera setups, live graphics, audio/video workflows and YouTube streaming."
+          />
+
+          <Service
+            number="06"
+            title="Creative Technology"
+            text="Combining design, code and modern digital tools to create practical solutions."
+          />
         </div>
       </section>
 
-      {/* EXPERIENCE */}
-      <section id="experience" className="section experience-section">
-        <div className="section-label">
-          <span>05</span>
-          EXPERIENCE
-        </div>
-
+      <section className="experience">
         <div className="section-heading">
-          <p className="section-eyebrow">WHERE I&apos;VE WORKED</p>
+          <p className="eyebrow">EXPERIENCE</p>
 
           <h2>
-            EXPERIENCE
-            <span>IN ACTION.</span>
+            WHERE I&apos;VE
+            <br />
+            WORKED.
           </h2>
         </div>
 
         <div className="experience-list">
-          {experiences.map((experience) => (
-            <Experience
-              key={experience.number}
-              {...experience}
-            />
-          ))}
+          <Experience
+            year="01"
+            title="HomeLinker"
+            role="Founder • Designer • Developer"
+            text="Built and continue developing a South African property marketplace from concept to deployed product."
+          />
+
+          <Experience
+            year="02"
+            title="Freelance"
+            role="Creative & Digital"
+            text="Graphic design, digital marketing, web development, branding and creative projects for different clients."
+          />
+
+          <Experience
+            year="03"
+            title="Urban Ink Studios"
+            role="Graphic Design • Print"
+            text="Worked across DTF, sublimation, apparel design, print production and customer-focused creative work."
+          />
+
+          <Experience
+            year="04"
+            title="SkyCity Printing"
+            role="Graphic Designer"
+            text="Created graphic design work and production artwork for print and promotional materials."
+          />
+
+          <Experience
+            year="05"
+            title="Live Media Production"
+            role="ATEM • OBS • Streaming"
+            text="Hands-on experience with live switching, livestreaming, graphics, cameras, audio and video workflows."
+          />
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="section contact-section">
-        <div className="section-label">
-          <span>06</span>
-          CONTACT
-        </div>
+      <section className="contact" id="contact">
+        <p className="eyebrow">LET&apos;S WORK</p>
 
-        <div className="contact-content">
-          <p className="section-eyebrow">LET&apos;S WORK TOGETHER</p>
+        <h2>
+          HAVE AN
+          <br />
+          IDEA?
+          <br />
+          LET&apos;S
+          <br />
+          BUILD IT.
+        </h2>
 
-          <h2>
-            HAVE AN
-            <span>IDEA?</span>
-          </h2>
+        <p>
+          Looking for someone who can combine design, technology and digital
+          thinking? Get in touch and let&apos;s talk about what you&apos;re
+          building.
+        </p>
 
-          <p className="contact-description">
-            Whether you need a designer, developer, digital marketer or
-            someone who can work across all of them — let&apos;s talk.
-          </p>
+        <div className="contact-links">
+          <a href="mailto:samuelsammythando@gmail.com">EMAIL ME</a>
 
-          <div className="contact-actions">
-            <a
-              href="mailto:samuelsammythando@gmail.com"
-              className="btn btn-primary"
-            >
-              EMAIL ME
-            </a>
+          <a href="tel:0614445545">061 444 5545</a>
 
-            <a href="tel:0614445545" className="btn">
-              CALL ME
-            </a>
+          <a
+            href="https://www.linkedin.com/in/samuel-ndlovu-94aa23420/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LINKEDIN
+          </a>
 
-            <a
-              href="https://www.linkedin.com/in/samuel-ndlovu-94aa23420/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn"
-            >
-              LINKEDIN
-            </a>
+          <a
+            href="https://github.com/samuelsammy084-a11y/Homelinker"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GITHUB
+          </a>
 
-            <a
-              href="https://github.com/samuelsammy084-a11y/Homelinker"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn"
-            >
-              GITHUB
-            </a>
-
-            <a
-              href="/Samuel-Ndlovu-CV.pdf"
-              download
-              className="btn"
-            >
-              DOWNLOAD CV
-            </a>
-          </div>
-
-          <div className="contact-details">
-            <a href="mailto:samuelsammythando@gmail.com">
-              samuelsammythando@gmail.com
-            </a>
-
-            <a href="tel:0614445545">061 444 5545</a>
-          </div>
+          <a href="/Samuel-Ndlovu-CV.pdf" download>
+            DOWNLOAD CV
+          </a>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer>
-        <div className="footer-brand">
-          SAMUEL<span>.</span>
-        </div>
+      <div className="mobile-call-bar">
+        <a href="tel:0614445545">
+          <span>☎</span>
+          CALL ME
+        </a>
+      </div>
 
-        <div className="footer-middle">
-          CREATIVE • DIGITAL • TECHNICAL
-        </div>
+      <footer className="footer">
+        <span>
+          © {new Date().getFullYear()} <strong>Samuel Ndlovu</strong>
+        </span>
 
-        <div className="footer-right">
-          © {new Date().getFullYear()} SAMUEL NDLOVU
-        </div>
+        <span>CREATIVE • DIGITAL • TECHNICAL</span>
+
+        <span>BUILT WITH NEXT.JS</span>
       </footer>
     </main>
+  );
+}
+
+function SkillCard({
+  number,
+  title,
+  text,
+}: {
+  number: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="skill-card">
+      <span className="skill-card-number">{number}</span>
+
+      <h3>{title}</h3>
+
+      <p>{text}</p>
+    </div>
+  );
+}
+
+function Service({
+  number,
+  title,
+  text,
+}: {
+  number: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="service">
+      <span className="service-number">{number}</span>
+
+      <h3>{title}</h3>
+
+      <p>{text}</p>
+    </div>
+  );
+}
+
+function Experience({
+  year,
+  title,
+  role,
+  text,
+}: {
+  year: string;
+  title: string;
+  role: string;
+  text: string;
+}) {
+  return (
+    <div className="experience-item">
+      <span className="experience-year">{year}</span>
+
+      <div>
+        <h3>{title}</h3>
+
+        <p>{text}</p>
+      </div>
+
+      <span className="experience-role">{role}</span>
+    </div>
   );
 }
