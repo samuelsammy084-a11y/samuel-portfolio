@@ -2575,3 +2575,83 @@ section {
     padding-bottom: 90px;
   }
 }
+
+/* About image — added without changing the existing About layout */
+.about-visual {
+  position: relative;
+}
+
+.about-image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+}
+
+.about-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(199, 255, 0, 0.25);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.7s ease, filter 0.5s ease;
+}
+
+.about-image-wrap:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.04);
+}
+
+.about-visual .about-number {
+  margin-top: 30px;
+}
+
+/* About section image */
+.about-visual {
+  position: relative;
+}
+
+.about-image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+}
+
+.about-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(199, 255, 0, 0.25);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.7s ease, filter 0.5s ease;
+}
+
+.about-image-wrap:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.04);
+}
+
+.about-visual .about-number {
+  margin-top: 30px;
+}

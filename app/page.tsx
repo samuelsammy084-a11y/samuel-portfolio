@@ -90,7 +90,16 @@ export default function Home() {
 
       <section className="about" id="about">
         <div className="about-grid">
-          <div>
+          <div className="about-visual" data-reveal>
+            <div className="about-image-wrap">
+              <Image
+                src="/images/samuel-about.jpg"
+                alt="Samuel Ndlovu in a black tuxedo and bow tie"
+                width={640}
+                height={640}
+                sizes="(max-width: 800px) 90vw, 420px"
+              />
+            </div>
             <div className="about-number">01</div>
           </div>
 
