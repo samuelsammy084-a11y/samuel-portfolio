@@ -1,0 +1,227 @@
+/* =========================================================
+   SITE NAV — mobile menu
+   Desktop (>800px) is untouched: it still uses the
+   .navbar / .nav-links / .nav-cta styles from globals.css.
+   ========================================================= */
+
+.nav-burger,
+.mobile-menu {
+  display: none;
+}
+
+.navbar a:focus-visible,
+.nav-burger:focus-visible,
+.mobile-menu a:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  /* Hamburger */
+  .nav-burger {
+    position: relative;
+
+    display: block;
+
+    width: 44px;
+    height: 44px;
+
+    margin-right: -10px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav-burger span {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+
+    height: 2px;
+
+    background: var(--white);
+
+    transition:
+      transform 0.3s ease,
+      top 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .nav-burger span:nth-child(1) {
+    top: 17px;
+  }
+
+  .nav-burger span:nth-child(2) {
+    top: 25px;
+  }
+
+  .nav-burger.is-open span {
+    background: var(--lime);
+  }
+
+  .nav-burger.is-open span:nth-child(1) {
+    top: 21px;
+    transform: rotate(45deg);
+  }
+
+  .nav-burger.is-open span:nth-child(2) {
+    top: 21px;
+    transform: rotate(-45deg);
+  }
+
+  /* Full-screen panel (sits under the navbar, z-index 100) */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 110px 6vw 32px;
+
+    overflow-y: auto;
+
+    background:
+      radial-gradient(
+        circle at 85% 12%,
+        rgba(199, 255, 0, 0.1),
+        transparent 45%
+      ),
+      var(--black);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0s linear 0.3s;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0s;
+  }
+
+  .mobile-menu-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .mobile-menu-list li {
+    border-bottom: 1px solid var(--border);
+
+    transform: translateY(14px);
+    opacity: 0;
+
+    transition:
+      transform 0.45s ease,
+      opacity 0.45s ease;
+  }
+
+  .mobile-menu.is-open .mobile-menu-list li {
+    transform: none;
+    opacity: 1;
+  }
+
+  .mobile-menu.is-open .mobile-menu-list li:nth-child(1) { transition-delay: 0.05s; }
+  .mobile-menu.is-open .mobile-menu-list li:nth-child(2) { transition-delay: 0.1s; }
+  .mobile-menu.is-open .mobile-menu-list li:nth-child(3) { transition-delay: 0.15s; }
+  .mobile-menu.is-open .mobile-menu-list li:nth-child(4) { transition-delay: 0.2s; }
+  .mobile-menu.is-open .mobile-menu-list li:nth-child(5) { transition-delay: 0.25s; }
+
+  .mobile-menu-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+
+    padding: 20px 0;
+
+    color: var(--white);
+
+    font-size: clamp(34px, 11vw, 56px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+
+    transition: color 0.25s ease;
+  }
+
+  .mobile-menu-list a span {
+    color: var(--lime);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+  }
+
+  .mobile-menu-list a:active {
+    color: var(--lime);
+  }
+
+  .mobile-menu-footer {
+    padding-top: 36px;
+  }
+
+  .mobile-menu-cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    border: 1px solid var(--lime);
+
+    color: var(--lime);
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .mobile-menu-cv:active {
+    background: var(--lime);
+    color: var(--black);
+  }
+
+  .mobile-menu-footer p {
+    margin: 22px 0 0;
+
+    color: var(--muted-2);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-align: center;
+  }
+
+  /* The fixed "Call me" bar would sit on top of the open menu */
+  body.menu-open .mobile-call-bar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .mobile-menu-list li,
+  .nav-burger span {
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+  }
+}

@@ -1,25 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "./components/ScrollReveal";
+import SiteNav from "./components/SiteNav";
 
 export default function Home() {
   return (
     <main>
-      <nav className="navbar">
-        <a href="#top" className="nav-logo">
-          SAMUEL<span>.</span>
-        </a>
-
-        <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <a href="/Samuel-Ndlovu-CV.pdf" download className="nav-cta">
-          DOWNLOAD CV
-        </a>
-      </nav>
+      <SiteNav />
+      <ScrollReveal />
 
       <section className="hero" id="top">
         <div className="hero-content">
@@ -57,7 +45,15 @@ export default function Home() {
 
         <div className="hero-visual">
           <div className="hero-image-wrap">
-            <img src="/images/samuel-portrait.jpg" alt="Samuel Ndlovu" />
+            <Image
+              src="/images/samuel-portrait.jpg"
+              alt="Samuel Ndlovu in a navy suit and glasses, leaning against a car"
+              width={1200}
+              height={1600}
+              sizes="(max-width: 500px) 88vw, 410px"
+              loading="eager"
+              fetchPriority="high"
+            />
 
             <div className="hero-image-label">
               <span>AVAILABLE FOR</span>
@@ -98,7 +94,7 @@ export default function Home() {
             <div className="about-number">01</div>
           </div>
 
-          <div className="about-copy">
+          <div className="about-copy" data-reveal>
             <p className="eyebrow">ABOUT ME</p>
 
             <h2>
@@ -130,7 +126,7 @@ export default function Home() {
       </section>
 
       <section className="skills" id="skills">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <p className="eyebrow">WHAT I DO</p>
 
           <h2>
@@ -145,7 +141,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="skills-grid">
+        <div className="skills-grid" data-reveal="group">
           <SkillCard
             number="01"
             title="Graphic Design"
@@ -185,7 +181,7 @@ export default function Home() {
       </section>
 
       <section className="work" id="work">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <p className="eyebrow">SELECTED WORK</p>
 
           <h2>
@@ -200,7 +196,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="work-block">
+        <div className="work-block" data-reveal>
           <div className="work-block-heading">
             <div>
               <p className="project-category">01 / WEB DEVELOPMENT</p>
@@ -258,7 +254,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="work-block">
+        <div className="work-block" data-reveal>
           <div className="work-block-heading">
             <div>
               <p className="project-category">02 / GRAPHIC DESIGN</p>
@@ -278,30 +274,48 @@ export default function Home() {
 
           <div className="design-gallery">
             <div className="design-item">
-              <img src="/images/design-01.jpg" alt="Graphic design project" />
-            </div>
-
-            <div className="design-item">
-              <img src="/images/design-02.jpg" alt="Graphic design project" />
-            </div>
-
-            <div className="design-item">
-              <img
-                src="/images/homelinker.png"
-                alt="HomeLinker branding project"
+              <Image
+                src="/images/design-01.jpg"
+                alt="Fresh Sprite promotional poster with a Sprite can, lemon slices and bold green lettering"
+                width={790}
+                height={974}
+                sizes="(max-width: 800px) 100vw, 58vw"
               />
             </div>
 
             <div className="design-item">
-              <img
+              <Image
+                src="/images/design-02.jpg"
+                alt="Navy and gold business card design for a wedding and lifestyle photographer"
+                width={850}
+                height={475}
+                sizes="(max-width: 800px) 100vw, 42vw"
+              />
+            </div>
+
+            <div className="design-item">
+              <Image
+                src="/images/homelinker.png"
+                alt="HomeLinker website homepage with the property search form"
+                width={1366}
+                height={768}
+                sizes="(max-width: 800px) 100vw, 42vw"
+              />
+            </div>
+
+            <div className="design-item">
+              <Image
                 src="/images/samuel-about.jpg"
-                alt="Samuel Ndlovu creative design"
+                alt="Samuel Ndlovu in a black tuxedo and bow tie"
+                width={640}
+                height={640}
+                sizes="(max-width: 800px) 100vw, 58vw"
               />
             </div>
           </div>
         </div>
 
-        <div className="work-block">
+        <div className="work-block" data-reveal>
           <div className="work-block-heading">
             <div>
               <p className="project-category">03 / APPAREL & PRINT</p>
@@ -321,16 +335,28 @@ export default function Home() {
 
           <div className="apparel-grid">
             <div className="apparel-card">
-              <img src="/images/shirt-design.jpeg" alt="Apparel design" />
+              <Image
+                src="/images/shirt-design.jpeg"
+                alt="Two people wearing black Thrive branded hoodies"
+                width={739}
+                height={1600}
+                sizes="(max-width: 800px) 100vw, 50vw"
+              />
             </div>
 
             <div className="apparel-card">
-              <img src="/images/design-01.jpg" alt="Print design" />
+              <Image
+                src="/images/design-01.jpg"
+                alt="Fresh Sprite poster artwork prepared for print"
+                width={790}
+                height={974}
+                sizes="(max-width: 800px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
 
-        <div className="work-block">
+        <div className="work-block" data-reveal>
           <div className="work-block-heading">
             <div>
               <p className="project-category">04 / MEDIA PRODUCTION</p>
@@ -348,9 +374,12 @@ export default function Home() {
           </div>
 
           <div className="media-project">
-            <img
+            <Image
               src="/images/livestream.jpeg"
-              alt="Live production setup"
+              alt="Outdoor live production setup with a monitor and audio equipment"
+              width={960}
+              height={1280}
+              sizes="90vw"
             />
 
             <div className="media-project-overlay">
@@ -398,7 +427,7 @@ export default function Home() {
       </section>
 
       <section className="services" id="services">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <p className="eyebrow">SERVICES</p>
 
           <h2>
@@ -413,7 +442,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="services-grid">
+        <div className="services-grid" data-reveal="group">
           <Service
             number="01"
             title="Brand & Graphic Design"
@@ -453,7 +482,7 @@ export default function Home() {
       </section>
 
       <section className="experience">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <p className="eyebrow">EXPERIENCE</p>
 
           <h2>
@@ -463,7 +492,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="experience-list">
+        <div className="experience-list" data-reveal="group">
           <Experience
             year="01"
             title="HomeLinker"
@@ -501,7 +530,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact" id="contact">
+      <section className="contact" id="contact" data-reveal="group">
         <p className="eyebrow">LET&apos;S WORK</p>
 
         <h2>
@@ -534,7 +563,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://github.com/samuelsammy084-a11y/Homelinker"
+            href="https://github.com/samuelsammy084-a11y"
             target="_blank"
             rel="noopener noreferrer"
           >

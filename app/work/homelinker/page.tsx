@@ -1,8 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "../../components/ScrollReveal";
 
 export default function HomeLinkerCaseStudy() {
   return (
     <main className="case-study-page">
+      <ScrollReveal />
+
       <nav className="case-study-nav">
         <Link href="/" className="back-link">
           ← BACK TO PORTFOLIO
@@ -55,14 +59,19 @@ export default function HomeLinkerCaseStudy() {
         </div>
 
         <div className="case-hero-image">
-          <img
+          <Image
             src="/images/homelinker.png"
-            alt="HomeLinker property marketplace"
+            alt="HomeLinker homepage showing the property search form"
+            width={1366}
+            height={768}
+            sizes="(max-width: 1200px) 90vw, 1200px"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
       </section>
 
-      <section className="case-section">
+      <section className="case-section" data-reveal="group">
         <div className="case-section-heading">
           <p>01 / OVERVIEW</p>
           <h2>Building a property platform.</h2>
@@ -107,7 +116,7 @@ export default function HomeLinkerCaseStudy() {
         </div>
       </section>
 
-      <section className="case-section case-dark">
+      <section className="case-section case-dark" data-reveal="group">
         <div className="case-section-heading">
           <p>02 / THE PROBLEM</p>
           <h2>Making property discovery simpler.</h2>
@@ -131,7 +140,7 @@ export default function HomeLinkerCaseStudy() {
         </div>
       </section>
 
-      <section className="case-section">
+      <section className="case-section" data-reveal="group">
         <div className="case-section-heading">
           <p>03 / WHAT I BUILT</p>
           <h2>From idea to working platform.</h2>
@@ -196,7 +205,7 @@ export default function HomeLinkerCaseStudy() {
         </div>
       </section>
 
-      <section className="case-section case-dark">
+      <section className="case-section case-dark" data-reveal="group">
         <div className="case-section-heading">
           <p>04 / TECHNOLOGY</p>
           <h2>The stack behind HomeLinker.</h2>
@@ -235,7 +244,7 @@ export default function HomeLinkerCaseStudy() {
         </div>
       </section>
 
-      <section className="case-section">
+      <section className="case-section" data-reveal="group">
         <div className="case-section-heading">
           <p>05 / MY ROLE</p>
           <h2>More than just development.</h2>
@@ -277,7 +286,7 @@ export default function HomeLinkerCaseStudy() {
         </div>
       </section>
 
-      <section className="case-section case-cta">
+      <section className="case-section case-cta" data-reveal="group">
         <p className="project-category">06 / LIVE PROJECT</p>
 
         <h2>
